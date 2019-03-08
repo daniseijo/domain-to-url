@@ -9,6 +9,7 @@
     "build": "tsc",
     "format": "prettier --write \"{src,__{tests,mocks}__}/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
+    "coveralls": "test --coverage && cat ./coverage/lcov.info | coveralls",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test && yarn lint",
     "preversion": "yarn lint",
@@ -35,6 +36,7 @@
   },
   "devDependencies": {
     "@types/jest": "^24.0.10",
+    "coveralls": "^3.0.3",
     "jest": "^24.3.1",
     "prettier": "^1.16.4",
     "ts-jest": "^24.0.0",
