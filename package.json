@@ -1,0 +1,41 @@
+{
+  "name": "domain-to-url",
+  "version": "0.1.0",
+  "description": "A simple test to try npm uploads",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"{src,__{tests,mocks}__}/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "yarn build",
+    "prepublishOnly" : "yarn test && yarn lint",
+    "preversion" : "yarn lint",
+    "version" : "yarn format && git add -A src",
+    "postversion" : "git push && git push --tags"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": ["domain", "url", "domain-to-url"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daniseijo/domain-to-url.git"
+  },
+  "author": "Daniel Seijo Sánchez <daniseijo12@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "bugs": {
+    "url": "https://github.com/daniseijo/domain-to-url/issues"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.10",
+    "jest": "^24.3.1",
+    "prettier": "^1.16.4",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.13.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3333"
+  }
+}
