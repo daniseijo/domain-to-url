@@ -9,7 +9,7 @@
     "build": "tsc",
     "format": "prettier --write \"{src,__{tests,mocks}__}/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "coveralls": "test --coverage && cat ./coverage/lcov.info | coveralls",
+    "coveralls": "test --coverage && cat ./tests/coverage/lcov.info | coveralls",
     "prepare": "yarn build",
     "prepublishOnly": "yarn test && yarn lint",
     "preversion": "yarn lint",
